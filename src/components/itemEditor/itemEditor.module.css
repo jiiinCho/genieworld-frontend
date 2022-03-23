@@ -1,0 +1,104 @@
+@value customAvatar, customAvatarMobile, colorIcon from '../../common/size.module.css';
+@value fontsizeSmall from '../../common/typography.module.css';
+@value colorPrimary, colorWhiteBckground from '../../common/color.module.css';
+
+.editMode,
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: fontsizeSmall;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  padding: 1em;
+}
+
+.editMode {
+  position: relative;
+  border: 1px solid colorPrimary;
+}
+
+.close {
+  position: absolute;
+  right: 1vw;
+  top: 1vw;
+  width: colorIcon;
+  height: colorIcon;
+}
+
+.character {
+  /* display: flex; */
+  width: customAvatarMobile;
+  height: customAvatarMobile;
+  position: relative;
+}
+.characterPreview {
+  width: 11.25rem;
+  margin: 0 auto;
+}
+.backgroundItem {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.editBtn {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: colorPrimary;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.character:hover .editBtn {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.attributes {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0.75rem 0;
+}
+
+.saveBtn {
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .character {
+    width: customAvatar;
+    height: customAvatar;
+  }
+}
+
+.stand {
+  transform: translate(25%, 10%) scale(2);
+}
+
+.imac {
+  transform: translate(50%, 0) scale(2);
+}
+
+.cat {
+  transform: translate(-25%, 0) scale(2);
+}

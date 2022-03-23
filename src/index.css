@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Oxygen", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #2a2f35;
+  background-color: #f7f6f2;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* reset all default style */
+button,
+button:focus {
+  outline: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+button:active {
+  outline: none;
+  background: transparent;
+  border: none;
+}
+textarea,
+input {
+  background: none;
+  border: none;
+}
+textarea:active,
+textarea:focus,
+input:active,
+input:focus {
+  background: none;
+  border: none;
+  outline: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* 
+font-family: 'Montserrat', sans-serif;
+font-family: 'Oxygen', sans-serif;
+font-family: 'Prosto One', cursive;
+*/
+
+/* scrollbar style */
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #cbd2d8;
+}

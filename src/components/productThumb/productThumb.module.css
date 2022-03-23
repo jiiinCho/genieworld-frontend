@@ -1,0 +1,59 @@
+@value colorWhiteBckground, colorPrimaryLight, colorPrimary, colorWhite, colorBlack from '../../common/color.module.css';
+@value fontsizeLarge, fontsizeRegular, fontsizeMedium from '../../common/typography.module.css';
+
+.item {
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid colorPrimary;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+.img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+.description {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.removeBtn,
+.productName,
+.price {
+  width: 100%;
+  margin: 0.4rem 0;
+  font-size: fontsizeRegular;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  color: colorBlack;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  font-size: fontsizeSmall;
+}
+.productName {
+  font-size: fontsizeLarge;
+  font-weight: 500;
+}
+
+.removeBtn {
+  padding: 0.5em;
+  border: 1px solid colorPrimary;
+  color: colorPrimary;
+  border-radius: 5px;
+  margin: 0.2rem;
+  margin-top: 10%;
+}
+
+.removeBtn:hover {
+  background-color: colorPrimary;
+  color: colorWhiteBckground;
+}

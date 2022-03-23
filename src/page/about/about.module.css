@@ -1,0 +1,120 @@
+@value colorWhiteTransparentAbout, colorGreyLight, colorPrimary, colorWhiteBckground, colorBlackLight from '../../common/color.module.css';
+@value fontsizeRegular, fontsizeMedium, fontsizeFooter, fontsizeFooterMobile from '../../common/typography.module.css';
+@value mainButton, mainVideoWidth, mainVideoHeight from '../../common/size.module.css';
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/images/main-background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  width: 100%;
+  padding: 2em;
+  padding-bottom: 1em;
+  overflow-y: scroll;
+}
+.section {
+  width: 100%;
+  border-top: 1px solid colorGreyLight;
+  padding: 1em 0;
+  margin-bottom: 1rem;
+  background: colorWhiteTransparentAbout;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: fontsizeMedium;
+}
+
+.heading {
+  margin: 0.25rem 0;
+}
+
+.heading,
+.number {
+  font-family: "Prosto One", cursive;
+  color: colorBlackLight;
+  cursor: default;
+}
+
+.number {
+  color: colorGreyLight;
+}
+
+.specDescription,
+.specTitle,
+.content {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: colorBlackLight;
+  font-size: fontsizeRegular;
+  cursor: default;
+  line-height: 1.25rem;
+}
+
+.link {
+  color: inherit;
+}
+
+.link:hover {
+  color: colorPrimary;
+}
+.strong {
+  font-weight: 400;
+}
+
+.spec {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1.25rem;
+}
+.specTitle {
+  margin: 0;
+  margin-right: 4rem;
+}
+.specDescription {
+  margin: 0;
+}
+
+.specDescription:hover {
+  color: colorPrimary;
+}
+.specList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.specItem {
+  display: flex;
+  width: 100%;
+  margin-bottom: 0.25rem;
+}
+.triangle {
+  margin-right: 0.5rem;
+}
+
+.finish {
+  font-family: "Prosto One", cursive;
+  color: colorBlackLight;
+  font-size: fontsizeFooterMobile;
+  margin: 0;
+  text-align: end;
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    width: 100%;
+    max-width: 720px;
+  }
+  .finish {
+    font-size: fontsizeFooter;
+  }
+}

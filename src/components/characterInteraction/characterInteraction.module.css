@@ -1,0 +1,15 @@
+.character {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+.speak {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 36px;
+}

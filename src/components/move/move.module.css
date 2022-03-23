@@ -1,0 +1,50 @@
+@value moveIcon from '../../common/size.module.css';
+@value colorWhiteBckground, colorBlackLight from '../../common/color.module.css';
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.down,
+.right,
+.left,
+.up {
+  width: moveIcon;
+  height: moveIcon;
+  fill: colorWhiteBckground;
+}
+
+.down:focus,
+.right:focus,
+.left:focus,
+.up:focus,
+.down:active,
+.right:active,
+.left:active,
+.up:active,
+.down:hover,
+.right:hover,
+.left:hover,
+.up:hover {
+  color: colorBlackLight;
+}
+
+.empty {
+  display: flex;
+  width: moveIcon;
+  height: moveIcon;
+}
+
+.up {
+  transform: rotate(180deg);
+}
+
+.left {
+  transform: rotate(90deg);
+}
+
+.right {
+  transform: rotate(-90deg);
+}

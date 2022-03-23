@@ -1,0 +1,34 @@
+@value colorPrimary, colorWhiteBckground from '../../common/color.module.css';
+@value fontsizeRegular from '../../common/typography.module.css';
+
+.banner {
+  width: 100%;
+  background-color: colorPrimary;
+  text-align: center;
+  overflow: hidden;
+}
+
+.message {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 500;
+  font-size: fontsizeRegular;
+  color: colorWhiteBckground;
+  text-transform: uppercase;
+  animation: appear 5000ms infinite;
+  cursor: default;
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(-100%);
+  }
+  25% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}

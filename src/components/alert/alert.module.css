@@ -1,0 +1,51 @@
+@value avatar, icon from '../../common/size.module.css';
+@value colorBlack, colorWarning, colorWarningFaded, colorNotify, colorNotifyFaded from '../../common/color.module.css';
+@value fontsizeMedium from '../../common/typography.module.css';
+
+.warning,
+.notify {
+  position: absolute;
+  top: 0.75em;
+  left: 1em;
+  right: 1em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  z-index: 101;
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.message {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  margin: 0.15rem;
+}
+
+.warning {
+  border: 1.5px solid colorWarning;
+  background-color: colorWarningFaded;
+}
+
+.notify {
+  border: 1.5px solid colorNotify;
+  background-color: colorNotifyFaded;
+}
+
+.closeNotify,
+.closeWarning {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.closeWarning:hover {
+  color: colorWarning;
+}
+
+.closeNotify:hover {
+  color: colorNotify;
+}

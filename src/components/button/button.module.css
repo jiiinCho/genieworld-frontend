@@ -1,0 +1,19 @@
+@value fontsizeRegular from '../../common/typography.module.css';
+@value colorPrimary, colorPrimaryLight, colorWhiteBckground from '../../common/color.module.css';
+
+.button:focus,
+.button:active,
+.button {
+  font-family: "Montserrat", sans-serif;
+  font-size: fontsizeRegular;
+  padding: 0.25em 2em;
+  margin: 0.15rem;
+  background-color: colorPrimary;
+  color: colorWhiteBckground;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: colorPrimaryLight;
+}

@@ -1,0 +1,22 @@
+@value colorBlack: #2A2F35;
+@value colorBlackLight: #44474C;
+
+@value colorGrey: #8F91A0;
+@value colorGreyLight: #CBD2D8;
+
+@value colorPrimary: #E88D6D;
+@value colorPrimaryLight: #F1BBA7;
+
+@value colorSecondary: #A0BAAE;
+@value colorSeconaryLight: #C6D6CE;
+
+@value colorWhiteBckground: #F7F6F2;
+@value colorWhiteTransparent: rgba(247, 246, 242, 0.25);
+@value colorWhiteTransparentAbout: rgba(247, 246, 242, 0.5);
+@value colorWhiteDeep: #FAFAF7;
+@value colorWhite:#FEFEFE;
+
+@value colorWarning: #E0535D;
+@value colorWarningFaded: #f9dddf;
+@value colorNotify: #4FA078;
+@value colorNotifyFaded: #E7FEF2;

@@ -1,0 +1,58 @@
+@value fontsizeLarge, fontsizeRegular from '../../common/typography.module.css';
+@value colorBlack, colorPrimaryLight, colorWhiteBckground, colorPrimary from '../../common/color.module.css';
+.container {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.list {
+  padding: 1em;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 1rem;
+}
+
+.emptyContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  margin: 0.25rem;
+  margin-top: 10%;
+  font-size: fontsizeLarge;
+  color: colorBlack;
+}
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-size: fontsizeLarge;
+  color: colorBlack;
+  margin: 0;
+  padding-left: 1em;
+  margin-top: 1rem;
+  cursor: default;
+}
+
+.goShopBtn:active,
+.goShopBtn:focus,
+.goShopBtn {
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  color: colorWhiteBckground;
+  background-color: colorPrimary;
+  font-size: fontsizeRegular;
+  margin-top: 5%;
+}
+
+.goShopBtn:hover {
+  background-color: colorPrimaryLight;
+}

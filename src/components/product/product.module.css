@@ -1,0 +1,124 @@
+@value colorPrimaryLight, colorPrimary, colorBlack, colorBlackLight, colorWhiteTransparent, colorGreyLight,colorGrey from '../../common/color.module.css';
+@value fontsizeRegular from '../../common/typography.module.css';
+@value cartIcon, cartIconMobile from '../../common/size.module.css';
+
+.product {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1em;
+  border: 1px solid #f6d1c5;
+}
+
+.product:hover {
+  border: 1px solid colorPrimary;
+}
+
+.product:hover .wishList,
+.product:hover .cart {
+  color: colorPrimary;
+}
+
+.product:hover .productName {
+  visibility: visible;
+}
+
+.product:hover .productInfo {
+  color: colorPrimary;
+}
+
+.productImg {
+  width: 100%;
+  object-fit: contain;
+  aspect-ratio: 1;
+}
+
+.wishContainer {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.wishList {
+  display: flex;
+  align-items: center;
+}
+
+.cart,
+.wishList {
+  width: cartIcon;
+  height: cartIcon;
+  color: colorGrey;
+  padding: 0.25em;
+  transition: transform 300ms ease-in;
+}
+
+.wishList:hover,
+.cart:hover {
+  transform: scale(1.25);
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+}
+
+.productName,
+.productInfo {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 500;
+  color: colorGrey;
+  font-size: fontsizeRegular;
+  text-transform: uppercase;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: default;
+}
+
+.productName {
+  margin-left: 0.25rem;
+  margin-right: 0;
+  color: colorPrimary;
+  visibility: hidden;
+}
+.player:active,
+.player:focus,
+.player {
+  position: absolute;
+  width: cartIcon;
+  height: cartIcon;
+  top: 1em;
+  right: 1em;
+  display: flex;
+  align-items: center;
+  border: 1px solid colorGrey;
+  border-radius: 50%;
+  transition: transform 300ms ease-in;
+}
+.playIcon {
+  color: colorGrey;
+}
+.player:hover {
+  border: 1px solid colorPrimary;
+  transform: scale(1.25);
+}
+.player:hover .playIcon {
+  color: colorPrimary;
+}
+
+@media screen and (max-width: 768px) {
+  .productName {
+    visibility: visible;
+    color: colorGrey;
+  }
+}

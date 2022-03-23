@@ -1,0 +1,63 @@
+@value colorPrimary from '../../common/color.module.css';
+
+.music,
+.item {
+  min-width: 64px;
+  flex-basis: 25%;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.music {
+  border: 1px solid colorPrimary;
+  border-radius: 5px;
+  height: 64px;
+  width: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  display: none;
+  background-color: colorPrimary;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.itemBtn:hover {
+  background-color: colorPrimary;
+}
+
+.music:hover .itemBtn,
+.item:hover .itemBtn {
+  display: flex;
+}
+
+.stand {
+  transform: translate(40%, 15%) scale(3);
+}
+
+.bed {
+  transform: translate(10%, 8%) scale(2);
+}
+
+.carpet {
+  transform: translate(12%, -10%) scale(1.7);
+}
+
+.imac {
+  transform: translate(80%, 0) scale(3);
+}
+
+.cat {
+  transform: translate(-10%, 15%) scale(4);
+}

@@ -1,0 +1,11 @@
+@value colorBlackLight, colorGrey from '../../common/color.module.css';
+
+.close {
+  width: 100%;
+  height: 100%;
+  color: colorGrey;
+}
+
+.close:hover .rect {
+  fill: colorBlackLight;
+}

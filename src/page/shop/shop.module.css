@@ -1,0 +1,29 @@
+@value colorPrimary, colorBlack, colorGrey from '../../common/color.module.css';
+@value fontsizeRegular, fontsizeSmall from '../../common/typography.module.css';
+@value filterIcon, cartIcon from '../../common/size.module.css';
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-y: scroll;
+}
+
+.productList {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 768px) {
+  .productList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1285px) {
+  .productList {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

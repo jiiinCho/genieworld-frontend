@@ -1,0 +1,31 @@
+@value colorGrey from '../../common/color.module.css';
+
+.recieptItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.title,
+.price {
+  margin: 0.25rem;
+  cursor: default;
+}
+
+.title {
+  font-weight: 500;
+}
+
+.quantity {
+  font-weight: 300;
+  color: colorGrey;
+  margin-left: 0.5rem;
+}
+
+.price {
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+}

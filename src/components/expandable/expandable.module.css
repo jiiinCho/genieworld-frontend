@@ -1,0 +1,58 @@
+@value plusIcon, selectedItem from '../../common/size.module.css';
+@value colorGreyLight, colorPrimary from '../../common/color.module.css';
+@value fontsizeMedium from '../../common/typography.module.css';
+
+.expandable {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid colorGreyLight;
+  padding: 0.25em 0.75em;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.expandableBtn {
+  width: plusIcon;
+  height: plusIcon;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.plus,
+.minus {
+  color: colorGreyLight;
+}
+
+.expandableBtn:hover .plus,
+.expandableBtn:hover .minus {
+  color: colorPrimary;
+}
+
+.title {
+  cursor: default;
+  font-family: "Prosto One", cursive;
+  font-size: fontsizeMedium;
+  margin: 0.5rem 0;
+}
+
+.itemList {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.editor {
+  border-radius: 5px;
+  border: 1px solid colorPrimary;
+  padding: 1em;
+}
+
+.selectedContainer {
+  width: selectedItem;
+  height: selectedItem;
+}

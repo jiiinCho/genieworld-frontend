@@ -1,0 +1,95 @@
+@value colorWhiteBckground, colorGreyLight, colorPrimary, colorBlack,colorBlackLight from '../../common/color.module.css';
+@value filterIcon from '../../common/size.module.css';
+@value fontsizeSmall from '../../common/typography.module.css';
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: colorWhiteBckground;
+  z-index: 1;
+  border-bottom: 1px solid colorGreyLight;
+}
+
+.search {
+  display: none;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 0.25em 0.5em;
+  margin: 0.15rem;
+  min-width: 175px;
+}
+
+.search.active {
+  border: 1px solid colorPrimary;
+}
+.search.active .searchIcon {
+  color: colorPrimary;
+}
+
+.searchInput {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  color: colorBlack;
+  font-size: fontsizeSmall;
+  text-transform: uppercase;
+}
+
+.list {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.categoryItem {
+  position: relative;
+}
+.scrollBtn,
+.filterBtn {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-size: fontsizeSmall;
+  display: flex;
+  align-items: center;
+  color: colorBlackLight;
+  transition: color 220ms ease-in-out;
+}
+
+.categoryItem:hover .filterBtn,
+.item:hover .filterBtn,
+.item:hover .scrollBtn {
+  color: colorPrimary;
+}
+
+/* .scrollBtn:hover,
+.scrollBtn:focus,
+.scrollBtn:active {
+  color: colorBlackLight;
+} */
+
+@media screen and (min-width: 768px) {
+  .filiter {
+    padding: 0.2em 0;
+  }
+  .search {
+    display: flex;
+  }
+  .list {
+    width: 50%;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .categoryItem:hover .filterBtn,
+  .item:hover .filterBtn,
+  .item:hover .scrollBtn {
+    color: colorPrimary;
+  }
+}

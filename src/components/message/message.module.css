@@ -1,0 +1,127 @@
+@value avatar, avatarMobile, icon from '../../common/size.module.css';
+@value colorWhiteTransparent, colorWhiteBckground, colorBlackLight, colorPrimary from '../../common/color.module.css';
+@value fontsizeRegular, fontsizeMedium from '../../common/typography.module.css';
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  border-radius: 10px;
+  background-color: colorWhiteTransparent;
+}
+.user {
+  display: flex;
+  align-items: center;
+}
+.avatarContainerMobile {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: avatarMobile;
+  height: avatarMobile;
+  border-radius: 50%;
+  border: 2px solid colorWhiteBckground;
+  overflow: hidden;
+  background-color: colorWhiteBckground;
+}
+
+.avatarContainer {
+  display: none;
+}
+
+.scaleAvatarMobile {
+  width: calc(avatar * 1.25);
+  height: calc(avatar * 1.25);
+  transform: translate(-20%, -32%);
+}
+
+.messageForm {
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: 700;
+  font-size: fontsizeMedium;
+  margin: 0.25rem 0;
+}
+
+.bubbleContainer {
+  position: relative;
+}
+
+.bubble {
+  color: colorWhiteBckground;
+}
+
+.bubbleOutline {
+  color: colorWhiteBckground;
+}
+.bubbleContainer:focus .bubbleOutline,
+.bubbleContainer:active .bubbleOutline,
+.bubbleContainer:hover .bubbleOutline {
+  color: colorPrimary;
+}
+.messageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: ;
+}
+
+.message {
+  background-color: transparent;
+  border: transparent;
+  width: 100%;
+  max-width: 14ch;
+  font-size: fontsizeRegular;
+}
+
+.message:focus,
+.message:active {
+  outline: none;
+}
+.submit {
+  width: icon;
+  height: icon;
+  background-color: transparent;
+  border: transparent;
+}
+.waveform {
+  color: colorBlackLight;
+  cursor: pointer;
+}
+
+.waveform:focus,
+.waveform:active,
+.waveform:hover {
+  color: colorPrimary;
+}
+
+@media (min-width: 825px) {
+  /* .container {
+    background-color: transparent;
+  } */
+  .avatarContainerMobile {
+    display: none;
+  }
+  .avatarContainer {
+    width: avatar;
+    height: avatar;
+    display: block;
+    border-radius: 50%;
+    border: 2px solid colorWhiteBckground;
+    overflow: hidden;
+    background-color: colorWhiteBckground;
+  }
+  .scaleAvatar {
+    width: calc(avatar * 1.75);
+    height: calc(avatar * 1.75);
+    transform: translate(-18%, -30%);
+  }
+}

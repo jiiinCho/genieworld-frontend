@@ -1,0 +1,62 @@
+@value backgroundUnit from '../../common/size.module.css';
+@value colorWhiteBckground from '../../common/color.module.css';
+
+.backgroundColor {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    86deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+
+.stopBackgroundEffect,
+.startBackgroundEffect {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/images/cherry.png");
+  background-size: backgroundUnit;
+  overflow: hidden;
+  position: relative;
+}
+.startBackgroundEffect {
+  animation: movingBackground 20s linear infinite;
+}
+
+.myspaceContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.myspace {
+  position: relative;
+  width: 256px;
+  height: 224px;
+  margin: 0 auto;
+  overflow: hidden;
+  transform: scale(3) translateY(11vh);
+}
+
+@keyframes movingBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: backgroundUnit backgroundUnit;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .myspace {
+    transform: scale(3) translateY(11vh);
+  }
+}
+@media (min-width: 1025px) {
+  .myspace {
+    transform: scale(3.5) translateY(9.5vh);
+  }
+}

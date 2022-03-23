@@ -1,0 +1,41 @@
+@value colorGrey, colorPrimary from '../../common/color.module.css';
+@value fontsizeSmall from '../../common/typography.module.css';
+@value attributeIcon from '../../common/size.module.css';
+
+.edit,
+.attr {
+  color: colorGrey;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+  padding: 0.15em 0.5em;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.attr {
+  cursor: default;
+  pointer-events: none;
+}
+
+.edit:hover {
+  border: 1px solid colorPrimary;
+}
+
+.icon {
+  margin-right: 0.75rem;
+  width: attributeIcon;
+  height: attributeIcon;
+}
+.message {
+  margin: 0.1rem 0;
+  padding: 0.2rem;
+}
+.messageInput {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: fontsizeSmall;
+  padding: 0.2rem;
+  margin: 0.1rem 0;
+  width: 190px;
+}

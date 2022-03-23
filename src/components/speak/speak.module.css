@@ -1,0 +1,11 @@
+.container {
+  position: relative;
+}
+.message {
+  font-family: "VT323", monospace;
+  position: absolute;
+  top: 1px;
+  left: 27px;
+  font-size: 7px;
+  margin: 0.15rem 0;
+}

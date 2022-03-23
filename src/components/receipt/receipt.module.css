@@ -1,0 +1,151 @@
+@value colorWarning, colorWhiteBckground, colorPrimaryLight, colorPrimary, colorBlack, colorBlackLight, colorGrey, colorGreyLight from '../../common/color.module.css';
+@value fontsizeRegular, fontsizeMedium, fontsizeSmall from '../../common/typography.module.css';
+
+.receiptContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid colorGreyLight;
+}
+.alert,
+.checkout,
+.charge,
+.sum,
+.discountSubmit,
+.discountInput,
+.discount {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  color: colorBlack;
+  font-size: fontsizeRegular;
+}
+
+.charge,
+.discount {
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: fontsizeSmall;
+}
+
+.discount:hover {
+  color: colorPrimary;
+}
+.discountContainer {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.discountContainer.active {
+  display: flex;
+}
+
+.discountInput {
+  border: 1px solid colorGreyLight;
+  border-radius: 5px;
+  margin: 0.25rem;
+  padding: 0.5em 1em;
+  flex: 1;
+}
+
+.discountInput:active,
+.discountInput:focus {
+  border: 1px solid colorGreyLight;
+}
+.checkout,
+.discountSubmit {
+  background-color: colorPrimary;
+  border-radius: 5px;
+  padding: 0 1em;
+  height: 2.4rem;
+  color: colorWhiteBckground;
+}
+
+.checkout:hover,
+.discountSubmit:hover {
+  background-color: colorPrimaryLight;
+}
+
+.checkout:active,
+.checkout:focus {
+  background-color: colorPrimary;
+}
+
+.recieptItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.sum,
+.title,
+.price {
+  margin: 0.25rem;
+  cursor: default;
+}
+
+.title {
+  font-weight: 500;
+}
+
+.quantity {
+  font-weight: 300;
+  color: colorGrey;
+  margin-left: 0.25rem;
+  font-size: fontsizeRegular;
+}
+
+.price {
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.sum {
+  font-weight: 500;
+  font-size: fontsizeMedium;
+}
+
+.sumButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.charge {
+  color: colorPrimary;
+  margin-bottom: 1rem;
+}
+
+.checkout {
+  min-width: 180px;
+}
+
+.alertCharge {
+  text-transform: uppercase;
+  color: colorWarning;
+  width: 100%;
+  text-align: end;
+  font-size: fontsizeSmall;
+  font-weight: 400;
+  cursor: default;
+}
+
+.minus {
+  color: colorWarning;
+}
+
+@media screen and (max-width: 768px) {
+  .sumButtons {
+    flex-direction: column;
+  }
+  .alertCharge {
+    text-align: center;
+  }
+}

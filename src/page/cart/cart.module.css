@@ -1,0 +1,88 @@
+@value colorWhite, colorBlack from '../../common/color.module.css';
+@value fontsizeLarge, fontsizeMedium, fontsizeRegular from '../../common/typography.module.css';
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.shopList,
+.complete {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: fontsizeMedium;
+  color: colorBlack;
+  margin: 0;
+  margin-top: 2rem;
+  padding: 0 1.25rem;
+}
+.shopList {
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  font-size: fontsizeRegular;
+}
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;
+  width: 100%;
+  height: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  overflow-y: scroll;
+}
+
+.receipt,
+.receiptMobile {
+  display: flex;
+  width: 100%;
+  padding: 1em;
+  background-color: colorWhite;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.receipt {
+  display: none;
+}
+.purchased,
+.list {
+  width: 100%;
+  padding: 1em;
+  padding-top: 0;
+}
+.empty {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: fontsizeMedium;
+}
+@media screen and (min-width: 768px) {
+  .receiptMobile {
+    display: none;
+  }
+  .receipt {
+    display: flex;
+    width: 50%;
+  }
+
+  .list {
+    width: 50%;
+  }
+  .complete {
+    font-size: fontsizeLarge;
+  }
+  .purchased {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 1rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .purchased {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
