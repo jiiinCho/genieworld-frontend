@@ -3,6 +3,7 @@ import Filter from "../../components/filter/filter";
 import Header from "../../components/header/header";
 import Product from "../../components/product/product";
 import Promotion from "../../components/promotion/promotion";
+import Spinner from "../../components/spinner/spinner";
 import { useAuth } from "../../context/authProvider";
 import { ShopProps, ProductT, CategoryT } from "../../interface";
 import styles from "./shop.module.css";
@@ -12,22 +13,28 @@ const Shop = ({ genieService }: ShopProps) => {
   const [list, setList] = useState<ProductT[]>([]);
   const [wish, setWish] = useState<ProductT[]>([]);
   const [cart, setCart] = useState<ProductT[]>([]);
+  const [loading, setLoading] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    genieService.getProducts().then(setList).catch(console.log);
-    const cart = genieService.getCartList(username);
-    const wish = genieService.getWishList(username);
+    setLoading(true);
+    genieService
+      .getProducts()
+      .then(setList)
+      .catch(console.error)
+      .finally(() => setLoading(false));
+    const cart = genieService.getCartList();
+    const wish = genieService.getWishList();
     setCart(cart);
     setWish(wish);
   }, [genieService, username]);
 
   const onKeywordSearch = (keyword: string) => {
-    genieService.onKeywordSearch(keyword).then(setList).catch(console.log);
+    genieService.onKeywordSearch(keyword).then(setList).catch(console.error);
   };
 
   const onCategorySearch = (category: CategoryT) => {
-    genieService.onCategorySearch(category).then(setList).catach(console.log);
+    genieService.onCategorySearch(category).then(setList).catach(console.error);
   };
 
   const onAddCart = (product: ProductT) => {
@@ -62,6 +69,7 @@ const Shop = ({ genieService }: ShopProps) => {
 
   return (
     <div ref={listRef} className={styles.container}>
+      {loading && <Spinner />}
       <Header />
       <Promotion />
       <Filter
@@ -71,7 +79,7 @@ const Shop = ({ genieService }: ShopProps) => {
         onKeywordSearch={onKeywordSearch}
         scrollToTop={scrollToTop}
       />
-      {list ? (
+      {list.length !== 0 ? (
         <ul className={styles.productList}>
           {list.map((item) => (
             <Product

@@ -38,7 +38,7 @@ const SignIn = () => {
         signIn(username, password)
           .then(() => navigate("/genieworld"))
           .catch((err) => {
-            console.log(err);
+            console.error(err);
             onAlert("Check username or password");
           });
     }

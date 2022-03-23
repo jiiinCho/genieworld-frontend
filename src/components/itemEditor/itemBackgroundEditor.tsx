@@ -21,6 +21,7 @@ const ItemBackgroundEditor = ({
 
   const onSave = () => {
     onUpdate(previewColor);
+    onClose();
   };
 
   const onCloseBtnClick = () => {

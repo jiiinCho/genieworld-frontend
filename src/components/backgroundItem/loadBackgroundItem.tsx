@@ -1,9 +1,9 @@
-import { BackgroundKeys, FurnitureColors } from "../../interface";
+import { BackgroundNames, FurnitureColors } from "../../interface";
 import Carpet from "./carpet";
 import Room from "./room";
 
 export function getBackgroundItem(
-  backgroundKey: BackgroundKeys,
+  backgroundKey: BackgroundNames,
   colors: FurnitureColors
 ): JSX.Element | undefined {
   switch (backgroundKey) {
@@ -12,7 +12,6 @@ export function getBackgroundItem(
     case "carpet":
       return <Carpet colors={colors} />;
     default:
-      console.log("cannot find background item, getBackgroundItem");
       return;
   }
 }

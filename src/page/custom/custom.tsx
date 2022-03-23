@@ -98,16 +98,3 @@ const Custom = ({
 };
 
 export default Custom;
-
-/*
-
-
-    //move to expandable
-    const myFriendList = friendsList.map((myFriend: any) => {
-      return {
-        userId: myFriend.username,
-        character: getCharacter(myFriend.type, myFriend),
-      } as Friends;
-    });
-
-    */

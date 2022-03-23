@@ -43,7 +43,7 @@ export function AuthProvider({
   useEffect(() => {
     authErrorEventBus.listen((err: any) => {
       //if authentication error occurs, set context value as default and display login page
-      console.log(err);
+      console.error(err);
       setUsername("genie");
       setToken("");
       setId("");

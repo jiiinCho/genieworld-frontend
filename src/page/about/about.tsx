@@ -38,8 +38,8 @@ const About = () => {
           </div>
           <p className={styles.content}>
             This web application is developed by Kyung-jin Cho
-            (&copy;jin.cho.dev). All artworks created by Kyung-jin Cho
-            (&copy;jin.cho.dev). Please note that character design is based on
+            (&copy;jiiin.cho.dev). All artworks created by Kyung-jin Cho
+            (&copy;jiiin.cho.dev). Please note that character design is based on
             Tiny Tower. Background music is created by Youngill Kim.
           </p>
           <p className={styles.content}>

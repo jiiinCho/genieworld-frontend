@@ -49,7 +49,7 @@ const Main = () => {
         </div>
       </main>
       <p className={styles.copyright}>
-        &copy; jin.cho.dev. All rights reserved.
+        &copy; jiiin.cho.dev. All rights reserved.
       </p>
     </div>
   );

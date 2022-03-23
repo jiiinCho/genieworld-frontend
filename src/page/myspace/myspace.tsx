@@ -16,6 +16,7 @@ import styles from "./myspace.module.css";
 import { loadCharacter } from "../../utility/load";
 import { utils } from "../../utility/utils";
 import { useAuth } from "../../context/authProvider";
+import Spinner from "../../components/spinner/spinner";
 
 /**
   [IMPORTANT LEARNING] userState value only stays in setPosition param.
@@ -42,7 +43,6 @@ const MySpace = ({ genieService }: MySpaceProps) => {
   const [background, setBackground] = useState<undefined | BackgroundItem[]>(
     undefined
   );
-  // const [username, setUserName] = useState<string>("");
   const [musicList, setMusicList] = useState<undefined | MusicList[]>(
     undefined
   );
@@ -50,6 +50,8 @@ const MySpace = ({ genieService }: MySpaceProps) => {
     undefined
   );
   const [friends, setFriends] = useState<undefined | Friends[]>(undefined);
+  const [loading, setLoading] = useState(false);
+
   const { username } = useAuth();
 
   //background music controller
@@ -85,13 +87,10 @@ const MySpace = ({ genieService }: MySpaceProps) => {
     }
   };
 
-  //welcome message
-  useEffect(() => {
-    handleOnAlert(`Welcome, ${username}!`, false);
-  }, [username]);
-
   //fetch owned characters
   useEffect(() => {
+    setLoading(true);
+
     genieService
       .getCharacters(username)
       .then((data) => {
@@ -148,14 +147,24 @@ const MySpace = ({ genieService }: MySpaceProps) => {
         setFriends(data.friends);
         setMusicList(data.userMusic);
       })
-      .catch((err) => handleOnAlert(err.message, true));
+      .catch((err) => handleOnAlert(err.message, true))
+      .finally(() => {
+        setLoading(false);
+      });
   }, [genieService, username]);
 
   const onMsgUpdate = (today: string) => {
     genieService.updateGenie(username, { today });
   };
+
+  //welcome message
+  useEffect(() => {
+    handleOnAlert(`Welcome, ${username}!`, false);
+  }, [username]);
+
   return (
     <div className={styles.container}>
+      {loading && <Spinner />}
       {isAlert.alertMsg && (
         <Alert
           alertMsg={isAlert.alertMsg}

@@ -44,7 +44,7 @@ const Cart = ({ genieService }: CartProps) => {
         .getCharacters(username)
         .then(setOwnedCharacters)
         .catch((err) => {
-          console.log(err);
+          console.error(err);
           onAlert("Fail to load data, please try it later");
         });
   }, [genieService, username]);
@@ -60,7 +60,7 @@ const Cart = ({ genieService }: CartProps) => {
     if (username && username !== "genie") {
       genieService.updateGenie(username, { dotori: updatedDotori });
       genieService.addCharacters(username, list, id).catch((err) => {
-        console.log(err);
+        console.error(err);
         onAlert("Fail to update purchase data, please try it later");
       });
       genieService.emptyCart();

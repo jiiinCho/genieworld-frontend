@@ -48,7 +48,6 @@ const Background = memo(({ background }: BackgroundProps) => {
           setCat(backgroundItem);
           break;
         default:
-          console.log("background item out of category");
           break;
       }
     });
