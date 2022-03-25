@@ -1,4 +1,4 @@
-import { UserAttributes, CharacterItem } from "../interface";
+import { UserAttributes, CharacterItem, BackgroundItem } from "../interface";
 
 export const defaultGenie: UserAttributes = {
   username: "genie",
@@ -63,7 +63,7 @@ export const defaultCharacters: CharacterItem[] = [
   },
 ];
 
-export const defaultBackgrounds = [
+export const defaultBackgrounds: BackgroundItem[] = [
   { type: "room", wall: "#b8b448", floor: "#e68b29" },
   { type: "carpet", primary: "#cf683e", pattern: "#e88d6d" },
   { type: "bed", frame: "#bf610f", pillow: "#f3e0b1", blanket: "#617761" },

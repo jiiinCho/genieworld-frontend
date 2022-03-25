@@ -10,7 +10,7 @@ const Wish = ({ genieService }: WishProps) => {
   const { username } = useParams();
   const [wish, setWish] = useState<ProductT[]>([]);
   useEffect(() => {
-    username && setWish(genieService.getWishList(username));
+    username && setWish(genieService.getWishList());
   }, [genieService, username]);
 
   const onRemoveProduct = (id: number) => {

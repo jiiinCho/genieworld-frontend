@@ -3,26 +3,29 @@ import { Howl } from "howler";
 import AuthService from "./service/authService";
 
 export interface GenieService {
-  getGenie: (username: string) => Promise<any>;
-  updateGenie: (username: string, attribute: GenieAttributes) => Promise<any>;
-  getCharacters: (username: string) => Promise<any>;
+  getGenie: (username: string) => Promise<UserAttributes>;
+  updateGenie: (
+    username: string,
+    attribute: GenieAttributes
+  ) => Promise<UserAttributes>;
+  getCharacters: (username: string) => Promise<CharacterItem[]>;
   addCharacters: (
     username: string,
     list: ProductT[],
     id: string
-  ) => Promise<any>;
-  updateCharacter: (updated: CharacterItem) => Promise<any>;
+  ) => Promise<CharacterItem[]>;
+  updateCharacter: (updated: CharacterItem) => Promise<CharacterItem>;
   onAddWish: (product: ProductT) => void;
   onDeleteWish: (id: number) => void;
   onAddCart: (product: ProductT) => void;
   onDeleteCart: (id: number) => void;
-  getProducts: () => any;
-  fetchBackground: () => any;
+  getProducts: () => Promise<ProductT[]>;
+  fetchBackground: () => BackgroundItem[];
   emptyCart: () => void;
-  getCartList: () => any;
-  getWishList: () => any;
-  onCategorySearch: (category: CategoryT) => any;
-  onKeywordSearch: (keyword: string) => any;
+  getCartList: () => ProductT[];
+  getWishList: () => ProductT[];
+  onCategorySearch: (category: CategoryT) => Promise<ProductT[]>;
+  onKeywordSearch: (keyword: string) => Promise<ProductT[]>;
 }
 interface GenieServiceI {
   genieService: GenieService;
@@ -189,7 +192,7 @@ interface UserAttributesI {
 }
 export interface UserAttributes {
   createdAt: string;
-  friends: CharacterItem[];
+  friends: Friends[];
   dotori: number;
   today: string;
   username: string;

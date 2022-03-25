@@ -34,7 +34,7 @@ const Shop = ({ genieService }: ShopProps) => {
   };
 
   const onCategorySearch = (category: CategoryT) => {
-    genieService.onCategorySearch(category).then(setList).catach(console.error);
+    genieService.onCategorySearch(category).then(setList).catch(console.error);
   };
 
   const onAddCart = (product: ProductT) => {
