@@ -1,6 +1,7 @@
-import DirectionInput from "./utility/direction";
 import { Howl } from "howler";
 import AuthService from "./service/authService";
+
+export type CategoryT = "music" | "character" | "furniture" | "all";
 
 export interface GenieService {
   getGenie: (username: string) => Promise<UserAttributes>;
@@ -8,6 +9,7 @@ export interface GenieService {
     username: string,
     attribute: GenieAttributes
   ) => Promise<UserAttributes>;
+
   getCharacters: (username: string) => Promise<CharacterItem[]>;
   addCharacters: (
     username: string,
@@ -15,25 +17,25 @@ export interface GenieService {
     id: string
   ) => Promise<CharacterItem[]>;
   updateCharacter: (updated: CharacterItem) => Promise<CharacterItem>;
+
+  getWishList: () => ProductT[];
   onAddWish: (product: ProductT) => void;
   onDeleteWish: (id: number) => void;
+
+  getCartList: () => ProductT[];
   onAddCart: (product: ProductT) => void;
   onDeleteCart: (id: number) => void;
-  getProducts: () => Promise<ProductT[]>;
-  fetchBackground: () => BackgroundItem[];
   emptyCart: () => void;
-  getCartList: () => ProductT[];
-  getWishList: () => ProductT[];
+
+  getProducts: () => Promise<ProductT[]>;
   onCategorySearch: (category: CategoryT) => Promise<ProductT[]>;
   onKeywordSearch: (keyword: string) => Promise<ProductT[]>;
+
+  fetchBackground: () => BackgroundItem[];
 }
 interface GenieServiceI {
   genieService: GenieService;
 }
-
-export type CharacterColors = {
-  [key in CharacterKeys]?: string;
-};
 
 export type CharacterNames = "genie" | "tiger" | "lazy" | "hipster" | "base";
 export type CharacterKeys =
@@ -47,6 +49,10 @@ export type CharacterKeys =
   | "cap"
   | "accessories";
 
+export type CharacterColors = {
+  [key in CharacterKeys]?: string;
+};
+
 export interface CharacterItem extends CharacterColors {
   type: CharacterNames;
   id?: string;
@@ -57,9 +63,17 @@ export interface ColorBase {
   colors: CharacterColors;
 }
 
-export type FurnitureColors = {
-  [key in FurnitureKeys]?: string;
-};
+export type BackgroundNames =
+  | "room"
+  | "carpet"
+  | "bed"
+  | "stand"
+  | "imac"
+  | "floorW"
+  | "floorT"
+  | "music"
+  | "chair"
+  | "cat";
 
 export type FurnitureKeys =
   | "wall"
@@ -74,20 +88,15 @@ export type FurnitureKeys =
   | "chair"
   | "body"
   | "blanket";
-export type BackgroundNames =
-  | "room"
-  | "carpet"
-  | "bed"
-  | "stand"
-  | "imac"
-  | "floorW"
-  | "floorT"
-  | "music"
-  | "chair"
-  | "cat";
+
+export type FurnitureColors = {
+  [key in FurnitureKeys]?: string;
+};
+
 export interface BackgroundItem extends FurnitureColors {
   type: BackgroundNames;
 }
+
 export interface FurnitureProps {
   colors: FurnitureColors;
 }
@@ -95,19 +104,10 @@ export interface BackgroundProps {
   background: BackgroundItem[];
 }
 
-export type KeyPressed = "ArrowUp" | "ArrowDown" | "ArrowLeft" | "ArrowRight";
-export type Direction = "left" | "right" | "up" | "down";
-
-export interface AppProps {
-  directionInput: DirectionInput;
-}
-
-export type CategoryT = "music" | "character" | "furniture" | "all";
 export interface GenieAttributes {
   dotori?: number;
   today?: string;
 }
-export type GenieAttributesKeyT = "dotori" | "today";
 
 export interface MySpaceProps {
   genieService: GenieService;
@@ -178,6 +178,8 @@ export interface AlertObject {
   alertMsg: string;
   warning: boolean;
 }
+
+export type Direction = "left" | "right" | "up" | "down";
 
 export interface MoveProps {
   onMove: (dir: Direction) => void;
@@ -309,17 +311,6 @@ export interface MainProps {
   genieService: GenieService;
 }
 
-/*
-type WithChildren<T = Record<string, unknown>> = T & {
-  children?: React.ReactNode;
-};
-
-type HeaderProps = WithChildren<{
-  name: string;
-}>;
-
-*/
-
 export interface ShopProps {
   genieService: GenieService;
 }
@@ -386,3 +377,14 @@ export interface SigninProps {
   authService: AuthService;
   // onAuthSuccess: (username: string) => void;
 }
+
+/*
+type WithChildren<T = Record<string, unknown>> = T & {
+  children?: React.ReactNode;
+};
+
+type HeaderProps = WithChildren<{
+  name: string;
+}>;
+
+*/
